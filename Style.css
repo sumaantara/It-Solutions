@@ -1,0 +1,370 @@
+/* General Styling */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --white-color: #ffffff;
+    --text-color: #495057;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    color: var(--white-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x800/007bff/ffffff?text=Background+Image') no-repeat center center/cover; /* Ganti dengan gambar latar belakang yang relevan */
+    color: var(--white-color);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #0056b3; /* Darker shade of primary */
+}
+
+/* Sections General */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background: var(--white-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Services Section */
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.service-item i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.service-item p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* About Section */
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact {
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+
+.contact h2 {
+    color: var(--white-color);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white-color);
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--dark-color);
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .services .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+    }
+}
